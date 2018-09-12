@@ -37,7 +37,9 @@ int main(){
    int i, j;
    double area, error, eps  = 1.0e-5;
    #pragma omp parallel for default(shared)
+
     for (i=0; i<NPOINTS; i++) {
+        // printf("NUM=%d\n", omp_get_num_threads());
         for (j=0; j<NPOINTS; j++) {
             c.r = -2.0+2.5*(double)(i)/(double)(NPOINTS)+eps;
             c.i = 1.125*(double)(j)/(double)(NPOINTS)+eps;

@@ -1,6 +1,7 @@
 import random
 import string
 import sys
+import os
 
 def small_file(name):
     lw = string.ascii_letters + ' ' * 7
@@ -11,4 +12,7 @@ if __name__ == '__main__':
     num_files = int(sys.argv[1])
     output_dir = sys.argv[2]
     for i in range(num_files):
-        small_file('{}/small-{}.txt'.format(output_dir, i))
+        path = '{}/'.format(output_dir)
+        if not os.path.exists(path):
+            os.makedirs(path)
+        small_file(os.path.join(path, 'small-{}.txt'.format(i)))

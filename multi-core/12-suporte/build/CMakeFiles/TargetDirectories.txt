@@ -1,0 +1,4 @@
+/home/rmolines/Documents/supercomp/multi-core/12-suporte/build/CMakeFiles/rebuild_cache.dir
+/home/rmolines/Documents/supercomp/multi-core/12-suporte/build/CMakeFiles/edit_cache.dir
+/home/rmolines/Documents/supercomp/multi-core/12-suporte/build/CMakeFiles/hello.dir
+/home/rmolines/Documents/supercomp/multi-core/12-suporte/build/CMakeFiles/teste.dir
