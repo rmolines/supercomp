@@ -11,8 +11,8 @@ bool readyB = false;
 void tarefaA(Semaphore &s1, Semaphore &s2) {
 
     std::cout << "Faz trabalho A" << std::endl;
-    s1.acquire();
     s2.release();
+    s1.acquire();
     
     
 // DESEJO ESPERAR POR B AQUI!
@@ -22,15 +22,15 @@ void tarefaA(Semaphore &s1, Semaphore &s2) {
 void tarefaB(Semaphore &s1, Semaphore &s2) {
 
     std::cout << "Faz trabalho B" << std::endl;
-    s2.acquire();
     s1.release();
+    s2.acquire();
 // DESEJO ESPERAR POR A AQUI!
     std::cout << "Fim trabalho B" << std::endl;
 }
 
 int main(int argc, char *argv[]) {
-    Semaphore s1(1);
-    Semaphore s2(1);
+    Semaphore s1(0);
+    Semaphore s2(0);
     std::thread t1(tarefaA, std::ref(s1), std::ref(s2));
     std::thread t2(tarefaB, std::ref(s1), std::ref(s2));
     

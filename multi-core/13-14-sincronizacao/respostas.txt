@@ -1,0 +1,27 @@
+MUTEX:
+
+lock_guard e unique_lock garantem que o mutex será liberado, pois o fazem automaticamente
+
+CONDITION VARIABLE:
+
+o problema em rdv.cpp é o notify é perdido, pois a outra thread não chegou no wait ainda.
+
+5.1 sec
+
+SEMAPHORE:
+
+as primitivas necessárias serão o mutex e as condition variables. elas serão usadas em conjunto para 
+garantir que quando se peça acquire, exista semaforo livre. será então verificado tanto a condicao
+dentro do wait quanto se o lock foi liberado.
+
+acquire(){
+    tranca o mutex;
+    espera até que o mutex esteja livre e que N > 0;
+    diminui N em 1;
+}
+
+release(){
+    trava o mutex;
+    aumenta o N em 1;
+    notifica um que aumentou o N;
+}

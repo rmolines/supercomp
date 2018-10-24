@@ -66,7 +66,7 @@ void thread2(int const &resultado_thread_0, int const &resultado_thread_1) {
         std::this_thread::sleep_for(std::chrono::milliseconds(500));
     }
    
-    std::cout << "thread2:" << resultado_thread_0 + resultado_thread_1 << "\n";
+    std::cout << "thread2: " << resultado_thread_0 + resultado_thread_1 << "\n";
     std::cout << "Fim thread2!" << std::endl;
 }
 
@@ -79,12 +79,12 @@ int main(int argc, char **argv) {
     std::thread t1 (thread1, std::ref (res_t0), std::ref (res_t1));
     std::thread t2 (thread2, std::ref (res_t0), std::ref (res_t1));
 
-    auto end = Time::now();
-    std::chrono::duration<double> diff = end-start;
 
     t0.join();
     t1.join();
     t2.join();
+    auto end = Time::now();
+    std::chrono::duration<double> diff = end-start;
 
     std::cout << "Time: " << diff.count() << std::endl;
     return 0;

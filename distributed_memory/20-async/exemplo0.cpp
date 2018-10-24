@@ -3,6 +3,7 @@
 #include <string>
 #include <iostream>
 #include <ctime>
+#include <boost/serialization/string.hpp>
 
 int main(int argc, char *argv[]) {
     boost::mpi::environment env{argc, argv};
