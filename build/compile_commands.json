@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/home/rmolines/github/supercomp/build",
+  "command": "/usr/bin/g++-7    -g   -o CMakeFiles/webparser.dir/main.cpp.o -c /home/rmolines/github/supercomp/main.cpp",
+  "file": "/home/rmolines/github/supercomp/main.cpp"
+}
+]
